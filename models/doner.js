@@ -4,19 +4,22 @@ const mongoose = require("mongoose")
 
 const donerSchema = new mongoose.Schema({
     name: {
-        type : String},
+        type: String
+    },
     place: {
-        type : String},
+        type: String
+    },
     email: {
-        type : String},
+        type: String
+    },
     phone: {
-        type : Number},
+        type: Number
+    },
     bloodGroup: {
-        type : String}
-    
+        type: String
+    }
+
 })
-
-
-const doner= mongoose.model("doner",donerSchema)
+const doner = mongoose.model("doner", donerSchema)
 
 module.exports = doner
