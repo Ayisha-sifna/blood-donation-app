@@ -187,6 +187,7 @@ module.exports = {
         if (req.file) {
             const result = await add.create({
                 image: req.file.filename,
+                link: req.body.link,
                 path: req.file.path
             })
             await result.save();
@@ -200,6 +201,7 @@ module.exports = {
         if (req.file) {
             const result = await advertisement.create({
                 image: req.file.filename,
+                link: req.body.link,
                 path: req.file.path
             })
             await result.save();

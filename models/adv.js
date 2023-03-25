@@ -3,6 +3,10 @@ const imgSchema = new mongoose.Schema({
     imgname: {
         type: String
     },
+    link: {
+        type: String,
+        require: true
+    },
     path: {
         type: String,
         require: true

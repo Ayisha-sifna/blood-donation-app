@@ -1,14 +1,13 @@
 const jwt = require("jsonwebtoken");
+const president = require('../models/president');
 const dotenv = require('dotenv');
 module.exports = {
     presidentAuthMiddleWare: async (req, res, next) => {
         try {
             const token = req.headers.authorization.split(' ')[1];
             const decode = jwt.verify(token, String(process.env.TOKEN_SECRET));
-            console.log(decode)
-            req.adminData = decode;
+            req.presidentData = decode;
             const exist = await president.findOne({ email: decode.userName });
-            console.log(exist)
             if (!exist) {
                 return res.status(200).json({
                     status: "fail",
